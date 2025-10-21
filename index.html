@@ -21,8 +21,65 @@
         box-sizing: border-box;
       }
 
+      :root {
+        --fs-base: clamp(1rem, 1.1rem - 0.2vw, 0.9rem);
+      }
+
       body {
-        height: 100vh;
+        min-height: 100vh;
+        font-family: sans-serif;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      p {
+        font-size: var(--fs-base);
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .faq-title {
+        padding: 4em 0;
+      }
+
+      .faq-title h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .faq-title p {
+        text-align: center;
+      }
+
+      .faq-body {
+        padding: 3em 0;
+        background-color: #f5f6fb;
+      }
+
+      .faq-body .question-div {
+        margin: 0 auto;
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .question-div h3 {
+        font-size: 1.7rem;
+        font-weight: 500;
+      }
+
+      .faq-body > div:first-of-type {
+        margin-bottom: 1.5rem;
+      }
+
+      .faq-body ul,
+      .faq-body ol {
+        margin-left: 1rem;
       }
 
       .author-info {
@@ -34,6 +91,12 @@
 
       .author-info a {
         text-decoration: none;
+      }
+
+      @media screen and (min-width: 768px) {
+        .faq-body > .question-div {
+          max-width: 600px;
+        }
       }
     </style>
   </head>
@@ -74,56 +137,60 @@
     For more detailed information, read our full Return Policy.
   
   -->
-    <section>
-      <div>
+    <section class="faq-section">
+      <div class="faq-title">
         <h2>Frequently Asked Questions</h2>
         <p>Browse through the most frequently asked questions</p>
       </div>
-      <div>
-        <h3>How can I track my order?</h3>
-        <p>You can track your order using the following steps:</p>
-        <ol>
-          <li>Go to the Order <a href="#">Tracking page.</a></li>
-          <li>Enter your order number and email address.</li>
-          <li>
-            Click on the Track Order button to view the current status of your
-            shipment.
-          </li>
-        </ol>
 
-        <p>
-          If you encounter any issues, please visit our
-          <a href="#">Help Center</a>
-        </p>
-      </div>
-      <div>
-        <div>
+      <div class="faq-body">
+        <div class="question-div">
+          <h3>How can I track my order?</h3>
+          <p>You can track your order using the following steps:</p>
+          <ol>
+            <li>Go to the Order <a href="#">Tracking page.</a></li>
+            <li>Enter your order number and email address.</li>
+            <li>
+              Click on the Track Order button to view the current status of your
+              shipment.
+            </li>
+          </ol>
+
+          <p>
+            If you encounter any issues, please visit our
+            <a href="#">Help Center</a>
+          </p>
+        </div>
+
+        <div class="question-div">
           <h3>What is your return policy?</h3>
           <p>
             We offer a 30-day policy return on most items. Here are some key
             points
           </p>
+
+          <ul>
+            <li>
+              <strong>Items must be in original condition: </strong> Unworn,
+              unused, and unwasted.
+            </li>
+            <li>
+              <strong>Include original packaging and tags: </strong> All items
+              should be returned with their original packaging and tags
+            </li>
+            <li>
+              <strong>Proof of purchase: </strong>A receipt or proof of purchase
+              is required
+            </li>
+          </ul>
+          <p>
+            For more detailed information, read our full
+            <a href="#">Return Policy</a>
+          </p>
         </div>
-        <ul>
-          <li>
-            <strong>Items must be in original condition: </strong> Unworn,
-            unused, and unwasted.
-          </li>
-          <li>
-            <strong>Include original packaging and tags: </strong> All items
-            should be returned with their original packaging and tags
-          </li>
-          <li>
-            <strong>Proof of purchase: </strong>A receipt or proof of purchase
-            is required
-          </li>
-        </ul>
-        <p>
-          For more detailed information, read our full
-          <a href="#">Return Policy</a>
-        </p>
       </div>
     </section>
+
     <div class="author-info">
       Coded by <a href="#">Kennedy Senyo Dordoe</a> | Challenge by
       <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
